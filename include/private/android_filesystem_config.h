@@ -76,8 +76,9 @@
 #define AID_SDCARD_PICS   1033  /* external storage photos access */
 #define AID_SDCARD_AV     1034  /* external storage audio/video access */
 #define AID_SDCARD_ALL    1035  /* access all users external storage */
-#define AID_AUDIT         1036  /* audit daemon */
-#define AID_FM_RADIO      1037  /* FM radio */
+#define AID_LOGD          1036  /* log daemon */
+#define AID_AUDIT         1037  /* audit daemon */
+#define AID_FM_RADIO      1038  /* FM radio */
 #define AID_SMARTCARD     1138  /* smart card subsystem */
 
 #define AID_THEMEMAN      1300  /* theme manager */
@@ -175,6 +176,7 @@ static const struct android_id_info android_ids[] = {
     { "sdcard_pics",   AID_SDCARD_PICS, },
     { "sdcard_av",     AID_SDCARD_AV, },
     { "sdcard_all",    AID_SDCARD_ALL, },
+    { "logd",          AID_LOGD, },
 
     { "shell",         AID_SHELL, },
     { "cache",         AID_CACHE, },
@@ -206,9 +208,9 @@ static const struct android_id_info android_ids[] = {
     { "mot_whisper",   AID_MOT_WHISPER, },
     { "mot_caif",  AID_MOT_CAIF, },
     { "mot_dlna",  AID_MOT_DLNA, },
-    { "mot_atvc",	AID_MOT_ATVC, },
+    { "mot_atvc",       AID_MOT_ATVC, },
     { "sprint_extension", AID_SPRINT_EXTENSION, },
-    { "mot_dbvc",	AID_MOT_DBVC, },
+    { "mot_dbvc",       AID_MOT_DBVC, },
 
     { "misc",          AID_MISC, },
     { "nobody",        AID_NOBODY, },
@@ -299,6 +301,7 @@ static const struct fs_path_config android_files[] = {
 
     { 00755, AID_ROOT,      AID_SHELL,     0, "system/bin/*" },
     { 00755, AID_ROOT,      AID_ROOT,      0, "system/lib/valgrind/*" },
+    { 00755, AID_ROOT,      AID_ROOT,      0, "system/lib64/valgrind/*" },
     { 00755, AID_ROOT,      AID_SHELL,     0, "system/xbin/*" },
     { 00755, AID_ROOT,      AID_SHELL,     0, "system/vendor/bin/*" },
     { 00755, AID_ROOT,      AID_SHELL,     0, "vendor/bin/*" },
